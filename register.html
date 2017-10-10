@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+function validFname()
+{
+	var name=document.getElementById("FirstName").value;
+	var pattern= /[a-zA-Z 0-9 ]*/;
+	
+	
+	if(!pattern.test(name))
+		{
+		document.getElementById("Fnerror").innerHTML="<font color=red>First Name doesnot allow special charaters</font>";
+		return false;
+		}
+	else 
+		{
+		document.getElementById("Fnerror").innerHTML="";
+		return true;
+		}
+}
+function validLname()
+{
+	var name=document.getElementById("LastName").value;
+	var pattern= /^[a-zA-Z0-9]*$/;
+	
+	
+	if(!pattern.test(name))
+		{
+		document.getElementById("Lnerror").innerHTML="<font color=red>Last Name doesnot allow special charaters</font>";
+		return false;
+		}
+	else 
+		{
+		document.getElementById("Lnerror").innerHTML="";
+		return true;
+		}
+}
+function validpass()
+{
+	var password=document.getElementById("Password").value;
+	var pattern=/^[A-Za-z,0-9]{6,10}$/;
+	var pattern1=/^[A-Za-z,0-9]{0,5}$/;
+	var pattern2=/^[A-Za-z,0-9]{11,50}$/;
+	
+	else if(pattern1.test(password)||pattern2.test(password))
+	{
+	
+	document.getElementById("perror").innerHTML="<font color=red>Password should be of 6 and max of 10 characters</font>";
+	return false;
+	}
+	else if(pattern.test(password)) {
+		//alert("no prob");
+		document.getElementById("perror").innerHTML="";
+		return true;
+	}
+	else if(!pattern1.test(password)||!pattern2.test(password))
+	{
+	//alert("special char");
+	document.getElementById("perror").innerHTML="<font color=red>Password should not contain special characters or space</font>";
+	return false;
+	}
+	
+	}
+	function validemail(){
+	var x=document.getElementById("Email").value;
+	var pattern = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if(x==""||x==null)
+    	{
+	document.getElementById("emerror").innerHTML="<font color='red'>Email address cannot be null</font>";
+	return false;
+    	}
+    else if(!pattern.test(x))
+    	{
+		document.getElementById("emerror").innerHTML="<font color='red'>Invalid Email Address</font>";
+		return false;
+    	}
+	else{
+		document.getElementById("emerror").innerHTML="";
+		return  true;
+	}
+    
+}
+function finalValidation()
+{
+	if(validFname()==true && validpass()==true &&   validLname()==true && validemail()==true)
+		{
+		return true;
+		}
+	else 
+	{
+		return false;
+		
+	}
+		
+	
+	}
+	</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login | BnG</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="images/logo.png" alt="" /></a>
+						</div>
+						
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php" ><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="#" class="active"> Signup</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="books.html">Books</a>
+                                   
+                                </li> 
+								<li class="dropdown"><a href="gadgets.html">Gadgets</a>
+                                    
+                                </li> 
+								
+								<li><a href="contact-us.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+	
+	
+	
+	  
+   
+   
+
+
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Signup!</h2>
+						<form method="post" action="registerdb.php" name="form" onsubmit="return finalValidation();">
+							<table cellspacing=10>
+							<tr><td>FirstName:</td> <td><input type="text" name="FirstName" placeholder="Enter your FirstName" required maxlength="25" id="FirstName" onblur="return validFname()"><span id="Fnerror"></span></td></tr>
+							<tr><td>LastName:</td><td><input type="text" name="LastName" placeholder="Enter your LastName" required maxlength="25" id="LastName" onblur="return validLname()"><span id="Lnerror"></span></td></tr>
+							<tr><td>Email id:</td><td><input type="email" name="Email" placeholder="Enter Email Address" required maxlength="150" id="Email" onblur="return validemail()" ><span id="emerror"></span></td></tr>
+							<tr><td>Password:</td><td><input type="password" name="Password" placeholder="Enter Password" required maxlength="25" id="Password" onblur="return validpass()" ><span id="perror"></span> </td></tr>
+							<tr><td><button type="submit" class="btn btn-default">Signup</button></td></tr>
+							</table>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div> 	
+	</section><!--/form-->
+	
+	
+	
+
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
